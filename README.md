@@ -1,4 +1,8 @@
-# clipsync
+# Template
+
+```bash
+bun init
+```
 
 To install dependencies:
 
