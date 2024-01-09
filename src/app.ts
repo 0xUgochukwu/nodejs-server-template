@@ -21,9 +21,11 @@ app.use(express.json());
 // Routes
 import { index } from "./routes/index";
 import post from "./routes/post.route";
+import admin from "./routes/admin.route";
 
 app.use("/", index);
 app.use("/posts", post);
+app.use("/admin", admin);
 
 app.use(errorNotFoundHandler);
 app.use(errorHandler);
