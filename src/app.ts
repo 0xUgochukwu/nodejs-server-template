@@ -1,9 +1,14 @@
 import express from "express";
 import logger from "morgan";
 
+
+import * as config from "./config/index";
+import './utils/db';
+
 import { errorHandler, errorNotFoundHandler } from "./middlewares/errorHandler";
 import { onError } from "./utils/serverErrorHandler";
-import * as config from "./config/index";
+
+
 
 
 const app = express();
@@ -15,8 +20,10 @@ app.use(express.json());
 
 // Routes
 import { index } from "./routes/index";
+import post from "./routes/post.route";
 
 app.use("/", index);
+app.use("/posts", post);
 
 app.use(errorNotFoundHandler);
 app.use(errorHandler);

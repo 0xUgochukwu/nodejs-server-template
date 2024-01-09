@@ -1,0 +1,28 @@
+import { Schema, model } from "mongoose";
+
+export interface IAdmin {
+    name: string;
+    email: string;
+    password: string;
+}
+
+const adminSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+  email: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: false,
+  }
+},
+{
+  timestamps: true,
+});
+
+
+export default model<IAdmin>("admins", adminSchema);
